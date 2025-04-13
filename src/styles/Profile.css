@@ -1,0 +1,76 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1e2a;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1e2a;
+  padding: 40px;
+}
+
+
+.profile-card {
+  background-color: #232533;
+  padding: 40px 48px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+form.form-grid {
+  width: 100%;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+
+.button-row {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.save-button,
+.change-password-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.save-button {
+  background-color: #4c8df6;
+}
+
+.save-button:hover {
+  background-color: #3a72d1;
+}
+
+.change-password-button {
+  background-color: #777;
+}
+
+.change-password-button:hover {
+  background-color: #555;
+}
+
+
+  
