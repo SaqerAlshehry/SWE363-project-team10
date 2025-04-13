@@ -1,0 +1,37 @@
+/* Define the default (light) theme */
+:root {
+    --background-color: #FBFBFB;
+    --text-color: black;
+    --button-bg: #4C8DF6;
+    --button-hover-bg: #337df5;
+}
+
+/* Dark theme */
+body.dark-mode {
+    --background-color: #1C1E2A;
+    --text-color: white;
+    --button-bg: #4C8DF6;
+    --button-hover-bg: #337df5;
+}
+
+body {
+    margin: 16px;
+    padding: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    background-color: var(--button-bg);
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
