@@ -6,7 +6,7 @@ import "../styles/Header.css";
 import { useNavigate } from "react-router-dom";
 import SideMenu from './SideMenu';
 
-function Header({ isDarkTheme, toggleTheme }) {
+function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navigate = useNavigate();
@@ -30,10 +30,8 @@ function Header({ isDarkTheme, toggleTheme }) {
                     <FontAwesomeIcon className="menu-icon" icon={faBars} size="2x" />
                 )}
             </div>
-            <div className="profile-container">
-                <FontAwesomeIcon className="theme-indicator" onClick={toggleTheme} icon={isDarkTheme ? faSun : faMoon} size="2x" />
-                <FontAwesomeIcon className="profile-icon" onClick={handleProfileNavigation} icon={faUser} size="2x" />
-            </div>
+            <FontAwesomeIcon className="profile-icon" onClick={handleProfileNavigation} icon={faUser} size="2x" />
+
         </div>
     );
 }

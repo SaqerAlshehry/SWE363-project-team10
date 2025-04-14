@@ -52,7 +52,7 @@ form.form-grid {
   cursor: pointer;
   border: none;
   color: white;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .save-button {

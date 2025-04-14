@@ -71,30 +71,3 @@
     text-decoration: none;
     font-size: 18px;
 }
-
-/* .side-menu ul li a:hover {
-    background-color: #ffffff;
-} */
-
-.side-menu ul li .container {
-    height: 0.005px;
-    /* Reduced thickness to 2px */
-    background-color: #ffffff;
-    /* Color of the container */
-    margin-top: 5px;
-    /* Space between the link and the container */
-    transition: height 0.3s ease;
-    /* Smooth transition for height */
-    width: 100%;
-    /* Full width under the menu item */
-    opacity: 0;
-    /* Initially hide the container */
-}
-
-.side-menu ul li:hover .container {
-    opacity: 1;
-    /* Show the container when the list item is hovered */
-    height: 2px;
-    /* Adjust the height on hover */
-    width: 20px;
-}

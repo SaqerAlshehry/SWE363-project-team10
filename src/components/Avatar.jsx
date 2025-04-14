@@ -6,7 +6,7 @@ function Avatar({ name, image, onEdit }) {
     <div className="avatar-container">
       <div className="avatar-header">
         <span className="avatar-name">{name}</span>
-        <span className="edit-icon" onClick={onEdit}>✏️</span>
+        <span className="edit-icon" onClick={onEdit}>⭐140</span>
       </div>
       <div className="avatar-circle">
         <img src={image} alt={name} className="avatar-image" />

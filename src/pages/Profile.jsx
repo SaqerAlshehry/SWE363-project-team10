@@ -19,22 +19,22 @@ function Profile() {
 
   return (
     <div className="profile-page">
-        <div className="profile-card">
-      <Avatar name={name} image="/assets/kfupm.jpg" onEdit={() => alert('Edit clicked')} />
+      <div className="profile-card">
+        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={() => { }} />
 
-      <form onSubmit={handleSubmit} className="form-grid">
-        <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} icon={<FiUser />} />
-        <TextField label="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} icon={<FiPhone />} />
-        <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} icon={<FiMail />} />
-        <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} icon={<FiLock />} />
-        <TextField label="Building" value={building} onChange={(e) => setBuilding(e.target.value)} icon={<FiHome />} />
-        <TextField label="Room" value={room} onChange={(e) => setRoom(e.target.value)} icon={<FiHome />} />
+        <form onSubmit={handleSubmit} className="form-grid">
+          <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} icon={<FiUser />} />
+          <TextField label="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} icon={<FiPhone />} />
+          <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} icon={<FiMail />} />
+          <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} icon={<FiLock />} />
+          <TextField label="Building" value={building} onChange={(e) => setBuilding(e.target.value)} icon={<FiHome />} />
+          <TextField label="Room" value={room} onChange={(e) => setRoom(e.target.value)} icon={<FiHome />} />
 
-        <div className="button-row">
-          <button type="submit" className="save-button">Save</button>
-          <button type="button" className="change-password-button" onClick={() => alert('Change Password')}>Change Password</button>
-        </div>
-      </form>
+          <div className="button-row">
+            <button type="submit" className="save-button">Save</button>
+            <button type="button" className="change-password-button" onClick={() => alert('Change Password')}>Change Password</button>
+          </div>
+        </form>
       </div>
     </div>
   );
