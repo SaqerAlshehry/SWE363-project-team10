@@ -10,8 +10,8 @@
 body.dark-mode {
     --background-color: #1C1E2A;
     --text-color: white;
-    --button-bg: #4C8DF6;
-    --button-hover-bg: #337df5;
+    --button-bg: #bb86fc;
+    --button-hover-bg: #3700b3;
 }
 
 body {

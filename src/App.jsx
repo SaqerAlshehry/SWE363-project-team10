@@ -3,8 +3,8 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import './styles/App.css';
 import Header from './components/Header';
+import AdminAddCategory from './pages/AdminAddCategory';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -18,6 +18,7 @@ function App() {
     if (isDarkMode) {
 
       document.body.classList.add('dark-mode');
+
       localStorage.setItem('theme', 'dark');
     } else {
       document.body.classList.remove('dark-mode');
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/admin-add-category" element={<AdminAddCategory />} />
         </Routes>
       </Router>
     </div>
