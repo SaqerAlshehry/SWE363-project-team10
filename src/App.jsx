@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import './styles/App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PostItem from './pages/PostItem';
 
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/post" element={<PostItem />} />
         </Routes>
       </Router>
     </div>
