@@ -4,11 +4,10 @@ import '../styles/AdminAddCategory.css';
 
 function AdminAddCategory() {
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Item posted!');
+        alert('Category Added!');
     };
 
     return (

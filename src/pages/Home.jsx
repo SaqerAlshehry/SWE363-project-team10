@@ -3,17 +3,17 @@ import TextField from "../components/TextField";
 import "../styles/Home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import TempItemCard from "../components/TempItemCard";
+import TempItemCard from "../components/ItemCard";
 
 function Home() {
     const [search, setSearch] = useState("");
     const items = [
-        { name: "Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1", description: "Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1Product 1" },
-        { name: "Product 2", description: "Description for Product 2", price: 63 },
-        { name: "Product 3", description: "Description for Product 3", price: 214 },
-        { name: "Product 4", description: "Description for Product 4", price: 736 },
-        { name: "Product 5", description: "Description for Product 5", price: 850 },
-        { name: "Product 6", description: "Description for Product 6", price: 24 }
+        { name: "Product 1", description: "Description for Product 1", price: 100, image: "/assets/kfupm.jpg" },
+        { name: "Product 2", description: "Description for Product 2", price: 63, image: "/assets/kfupm.jpg" },
+        { name: "Product 3", description: "Description for Product 3", price: 214, image: "/assets/kfupm.jpg" },
+        { name: "Product 4", description: "Description for Product 4", price: 736, image: "/assets/kfupm.jpg" },
+        { name: "Product 5", description: "Description for Product 5", price: 850, image: "/assets/kfupm.jpg" },
+        { name: "Product 6", description: "Description for Product 6", price: 24, image: "/assets/kfupm.jpg" }
     ];
 
     const filteredItems = items.filter(item => {
