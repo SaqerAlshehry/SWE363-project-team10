@@ -3,10 +3,13 @@ import TextField from "../components/TextField";
 import "../styles/Home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
+
 
 function AdminDashboard() {
     const [category, setCategory] = useState("");
     const [search, setSearch] = useState("");
+    const navigate = useNavigate();
 
     const totalMembers = 123;
     const totalListings = 456;
@@ -72,29 +75,37 @@ function AdminDashboard() {
         gap: "2rem",
         alignItems: "center"
       }}>
-        {["Add Listing", "Remove Listing", "Manage Listings"].map((label, i) => (
-          <div key={i} style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
-            minWidth: "160px",
-            height: "100px"
-          }}>
-            <h4 style={{ marginBottom: "0.5rem" }}>{label}</h4>
-            <button style={{
-              padding: "10px 20px",
-              backgroundColor: "green",
-              color: "white",
-              fontWeight: "bold",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer"
-            }}>
-              Select
-            </button>
-          </div>
-        ))}
+     {["Add Listing", "Remove Listing", "Manage Listings"].map((label, i) => (
+  <div key={i} style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    minWidth: "160px",
+    height: "100px"
+  }}>
+    <h4 style={{ marginBottom: "0.5rem" }}>{label}</h4>
+    <button
+      onClick={() => {
+        if (label === "Add Listing") {
+          navigate("/post-item");
+        }
+      }}
+      style={{
+        padding: "10px 20px",
+        backgroundColor: "green",
+        color: "white",
+        fontWeight: "bold",
+        border: "none",
+        borderRadius: "6px",
+        cursor: "pointer"
+      }}
+    >
+      Select
+    </button>
+  </div>
+))}
+
       </div>
     </div>
   </div>
