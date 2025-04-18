@@ -72,17 +72,21 @@
     font-size: 18px;
 }
 .logout-button {
-    background-color: transparent;
+    background: none;
     border: none;
-    color: #333; 
-    font-weight: 500;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
     cursor: pointer;
-    font-size: 16px;
-    padding: 8px 0;
-    transition: color 0.2s;
+    padding: 16px;
+    display: block;
+    transition: background-color 0.2s;
   }
   
   .logout-button:hover {
-    color: #000; 
+    background-color: rgba(255, 255, 255, 0.1);
   }
+  
   
