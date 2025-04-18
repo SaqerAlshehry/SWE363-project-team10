@@ -33,20 +33,6 @@ function ItemDetails() {
                     <p>{itemName}</p>
                     <p className="description">{itemDescription}</p>
                     <p className="price">{itemDonation}</p>
-                    <TextField className= "comment-text-field" label="" type="text" value={userComment} onChange={(value) => { setUserComment(value.target.value) }} placeholder="Enter a comment..."></TextField>
-                    <button onClick={() => alert("Comment Added!")} className="comment-button">Add Comment</button>
-                    <br />
-                    <div className="comments-column">
-                        <p className="comments-p">What people think about this:</p>
-                        <div className="comments">
-                            {comments.map((comment, index) => (
-                                <div>
-                                    <img className="comment-img" src="https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png" alt="User" />
-                                    <p key={index} className="comment">{comment}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
                 <img className="item-details-img" src={itemImage} alt={`Product ${itemName}`} />
             </div>
