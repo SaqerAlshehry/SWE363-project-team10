@@ -8,7 +8,7 @@ function TempItemCard({ item }) {
     const itemObjectProperties = [
         item.name,
         item.description,
-        item.price,
+        item.donation,
         item.image,
     ];
 
@@ -27,7 +27,7 @@ function TempItemCard({ item }) {
                 alt={item.name}
             />
             <h3>{item.name}</h3>
-            <h3 className="price">${item.price}</h3>
+            <h3 className="price">{item.donation}</h3>
         </div>
     );
 }

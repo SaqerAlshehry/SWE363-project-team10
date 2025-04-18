@@ -16,14 +16,21 @@
     max-width: 900px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
 }
 
 .details-column {
     flex: 1;
+    min-width: 0;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .item-details-img {
@@ -37,11 +44,15 @@
 
 p {
     font-size: 32px;
+    margin: 0 0 16px 0;
+    word-break: break-word;
 }
 
 .description {
     font-size: 20px;
     color: #b0b0b0;
+    margin-bottom: 16px;
+    word-break: break-word;
 }
 
 .comment-button {
@@ -52,8 +63,80 @@ p {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .comment-button:hover {
     background-color: #3a72d1;
+}
+
+.comment-button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .item-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-details-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .details-column {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.details-column .price {
+    color: #4c8df6;
+}
+
+.comments-p {
+    font-size: 24px;
+}
+
+.comment {
+    font-size: 20px;
+    color: #b0b0b0;
+    margin-bottom: 16px;
+    word-break: break-word;
+}
+
+.comment-img {
+    width: 100%;
+    max-width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comment-text-field {
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #4c8df6;
+    background-color: #232533;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s ease;
+
 }
