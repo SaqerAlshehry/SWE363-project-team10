@@ -1,21 +1,14 @@
-body {
-    margin: 16px;
-    padding: 16px;
-    background-color: #1C1E2A;
+html, body {
+    margin: 20;
+    padding: 0;
+    height: 100%;
     color: white;
-    transition: #1C1E2A 0.3s, color 0.3s;
-}
-
-button {
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    border: none;
-    background-color: #bb86fc;
-    color: white;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #3700b3;
-}
+  }
+  
+  #root {
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  

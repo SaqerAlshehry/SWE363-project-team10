@@ -7,13 +7,16 @@ body {
 
 
 .profile-page {
-  min-height: 100vh;
+  flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #1c1e2a;
-  padding: 40px;
+  padding: 0 24px;
+  overflow: hidden;
 }
+
 
 
 .profile-card {
@@ -70,3 +73,20 @@ form.form-grid {
 .change-password-button:hover {
   background-color: #555;
 }
+.history-card {
+  margin-top: 32px;
+  background-color: #232533;
+  padding: 24px;
+  border-radius: 16px;
+  color: white;
+  max-width: 900px;
+  width: 100%;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+

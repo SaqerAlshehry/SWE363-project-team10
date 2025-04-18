@@ -1,12 +1,25 @@
 .post-page {
   min-height: 100vh;
-  background-color: #1c1e2a;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  background-color: #1c1e2a;
+  padding: 0 24px;
   color: white;
+  overflow: hidden;
 }
+
+.post-page h3 {
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
+
 
 .post-container {
   display: flex;

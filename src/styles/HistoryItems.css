@@ -1,0 +1,36 @@
+.history-item-tile {
+    background-color: #232533;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .history-item-tile:hover {
+    transform: translateY(-4px);
+  }
+  
+  .history-tile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4c8df6;
+    margin-bottom: 12px;
+  }
+  
+  .history-tile-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .history-tile-status {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #bbb;
+  }
+  
+  
