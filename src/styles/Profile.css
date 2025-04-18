@@ -73,6 +73,7 @@ form.form-grid {
 .change-password-button:hover {
   background-color: #555;
 }
+
 .history-card {
   margin-top: 32px;
   background-color: #232533;
@@ -90,3 +91,22 @@ form.form-grid {
   margin-top: 16px;
 }
 
+.comments-container {
+  width: 500px;
+  margin-top: 16px;
+  background-color: #232533;
+  padding: 24px;
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.comment {
+  background-color: #2a2c3a;
+  padding: 16px;
+  border-radius: 8px;
+}
