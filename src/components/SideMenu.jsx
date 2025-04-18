@@ -38,6 +38,10 @@ function SideMenu({ isOpen, hideMenu }) {
                         <div className="container"></div> {/* Container under the choice */}
                     </li>
                     <li>
+                        <a href="/post-item">Post Item</a>
+                        <div className="container"></div> {/* Container under the choice */}
+                    </li>
+                    <li>
                         <a href="/contact">Contact</a>
                         <div className="container"></div> {/* Container under the choice */}
                     </li>

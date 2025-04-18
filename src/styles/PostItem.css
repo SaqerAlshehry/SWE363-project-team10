@@ -33,6 +33,30 @@
   gap: 20px;
 }
 
+/* Matching TextField styles */
+.text-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-label {
+  margin-bottom: 6px;
+  color: white;
+  font-weight: 500;
+}
+
+.text-area {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
 .submit-button {
   background-color: #4c8df6;
   color: white;
@@ -41,7 +65,7 @@
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .submit-button:hover {

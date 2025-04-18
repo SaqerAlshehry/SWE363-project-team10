@@ -12,6 +12,7 @@ function TextField({ label, type = 'text', value, onChange, placeholder, icon })
           value={value}
           onChange={onChange}
           placeholder={placeholder}
+          className="text-input"
         />
       </div>
     </div>
