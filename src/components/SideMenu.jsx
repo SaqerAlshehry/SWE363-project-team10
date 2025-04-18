@@ -1,21 +1,28 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/SideMenu.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function SideMenu({ isOpen, hideMenu }) {
     const menuRef = useRef(null);
     const overlayRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleClickOutside = (e) => {
-            if (menuRef.current && !menuRef.current.contains(e.target) && overlayRef.current && overlayRef.current.contains(e.target)) {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(e.target) &&
+                overlayRef.current &&
+                overlayRef.current.contains(e.target)
+            ) {
                 hideMenu();
             }
         };
 
-        document.addEventListener('click', handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
 
         return () => {
-            document.removeEventListener('click', handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         };
     }, [hideMenu]);
 
@@ -26,24 +33,36 @@ function SideMenu({ isOpen, hideMenu }) {
                 <ul>
                     <h1 className="categories-header">Categories</h1>
                     <li>
-                        <a href="/">Home</a>
-                        <div className="container"></div> {/* Container under the choice */}
+                        <Link to="/home">Home</Link>
+                        <div className="container"></div>
                     </li>
                     <li>
-                        <a href="/profile">Profile</a>
-                        <div className="container"></div> {/* Container under the choice */}
+                        <Link to="/profile">Profile</Link>
+                        <div className="container"></div>
                     </li>
                     <li>
-                        <a href="/admin-add-category">Add New Category</a>
-                        <div className="container"></div> {/* Container under the choice */}
+                        <Link to="/admin-add-category">Add New Category</Link>
+                        <div className="container"></div>
                     </li>
                     <li>
-                        <a href="/post-item">Post Item</a>
-                        <div className="container"></div> {/* Container under the choice */}
+                        <Link to="/post-item">Post Item</Link>
+                        <div className="container"></div>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
-                        <div className="container"></div> {/* Container under the choice */}
+                        <Link to="/contact">Contact</Link>
+                        <div className="container"></div>
+                    </li>
+                    <li>
+                        <button
+                            className="logout-button"
+                            onClick={() => {
+                                localStorage.removeItem("isLoggedIn");
+                                navigate("/login");
+                            }}
+                        >
+                            Logout
+                        </button>
+                        <div className="container"></div>
                     </li>
                 </ul>
             </div>
