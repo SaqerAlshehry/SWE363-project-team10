@@ -73,6 +73,8 @@ function AdminDashboard() {
                     onClick={() => {
                       if (label === "Add Listing") {
                         navigate("/post-item");
+                      }else if (label === "Remove Listing") {
+                        navigate("/remove-listing"); 
                       }
                     }}
                     style={{

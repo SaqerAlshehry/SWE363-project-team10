@@ -138,7 +138,7 @@
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .submit-button:hover {

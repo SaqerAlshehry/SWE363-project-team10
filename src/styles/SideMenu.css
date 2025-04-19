@@ -1,92 +1,86 @@
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #3a72d1;
-    color: white;
-    transition: left 0.3s ease;
-    padding-top: 60px;
-    z-index: 999;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-.side-menu:hover {
-    cursor: default;
+.side-menu.open ~ .overlay {
+  opacity: 1;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #f1f3f6;
+  z-index: 999;
+  transition: left 0.3s;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
 .side-menu.open {
-    left: 0;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 998;
-}
-
-.menu-icon {
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.close-icon {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-.menu-icon:hover,
-.close-icon:hover {
-    color: #fff;
+  left: 0;
 }
 
 .categories-header {
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    padding: 20px;
-    text-align: start;
+  color: #1a237e;
+  font-size: 24px;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .side-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .side-menu ul li {
-    padding: 16px;
-    text-align: center;
-    position: relative;
+  padding: 16px;
+  border-bottom: 2px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.side-menu ul li:hover {
+  background-color: #e3f2fd;
+  transform: translateX(5px);
 }
 
 .side-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+  color: #0d47a1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  font-weight: 500;
 }
+
 .logout-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-    padding: 16px;
-    display: block;
-    transition: background-color 0.2s;
-  }
-  
-  .logout-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  
+  background: none;
+  border: none;
+  color: #0d47a1;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+  padding: 1px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #e3f2fd;
+  transform: translateX(5px);
+}
+
+.container {
+  display: none;
+}
