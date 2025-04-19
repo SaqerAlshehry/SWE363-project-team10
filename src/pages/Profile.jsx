@@ -4,6 +4,7 @@ import Avatar from '../components/Avatar';
 import { FiUser, FiMail, FiPhone, FiLock, FiHome } from 'react-icons/fi';
 import '../styles/Profile.css'
 import HistoryItems from '../components/HistoryItems';
+import { useNavigate } from 'react-router-dom';
 
 
 function Profile() {
@@ -42,10 +43,16 @@ function Profile() {
     alert('Profile saved!');
   };
 
+  const navigate = useNavigate();
+
+  function handleBadgePageNavigation() {
+    navigate("/badge");
+  }
+
   return (
     <div className="profile-page">
       <div className="profile-card">
-        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={() => { }} />
+        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={() => { handleBadgePageNavigation() }} />
 
         <form onSubmit={handleSubmit} className="form-grid">
           <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} icon={<FiUser />} />
@@ -70,7 +77,6 @@ function Profile() {
           <HistoryItems itemImage="/assets/kfupm.jpg" title="Bookshelf" status="Still" />
         </div>
       </div>
-
       <div className="history-card">
         <h3>What People Say About This User</h3>
         <div className="history-grid">
@@ -81,10 +87,6 @@ function Profile() {
                 <p>{comment.comment}</p>
               </div>
             ))}
-            <div className="comment">
-              <strong>Ahmed Alshahrani</strong>
-              <p>Great user, very helpful!</p>
-            </div>
           </div>
         </div>
       </div>

@@ -83,3 +83,8 @@
     font-size: 24px;
     color: white;
 }
+
+.item-card ul li {
+    list-style: none;
+    font-size: 18px;
+}

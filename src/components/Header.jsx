@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUser, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 import "../styles/Avatar.css";
 import "../styles/Header.css";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ function Header() {
     }
 
     return (
-<div className="header-container">
+        <div className="header-container">
             <div className="header-left">
                 <div onClick={showSideMenu} className="menu">
                     {isMenuOpen ? (
@@ -31,19 +31,19 @@ function Header() {
                         <FontAwesomeIcon className="menu-icon" icon={faBars} size="lg" />
                     )}
                 </div>
-                <h1 
-                    className="sharegoods-logo" 
+                <h1
+                    className="sharegoods-logo"
                     onClick={() => navigate("/Home")}
                 >
                     Sharegoods
                 </h1>
             </div>
-            
-            <FontAwesomeIcon 
-                className="profile-icon" 
-                onClick={handleProfileNavigation} 
-                icon={faUser} 
-                size="lg" 
+
+            <FontAwesomeIcon
+                className="profile-icon"
+                onClick={handleProfileNavigation}
+                icon={faUser}
+                size="lg"
             />
         </div>
     );

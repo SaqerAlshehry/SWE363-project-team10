@@ -31,34 +31,28 @@ function SideMenu({ isOpen, hideMenu }) {
             {isOpen && <div className="overlay" ref={overlayRef} onClick={hideMenu}></div>}
             <div className={`side-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
                 <ul>
+<<<<<<< HEAD
                     <h1 className="categories-header">Sections</h1>
+=======
+                    <h1 className="sections-header">Sections</h1>
+>>>>>>> 39bd73c (Changing some names in the UI only)
                     <li>
                         <Link to="/home">Home</Link>
-                        <div className="container"></div>
+
                     </li>
                     <li>
                         <Link to="/profile">Profile</Link>
-                        <div className="container"></div>
+
                     </li>
                     <li>
-                        <Link to="/admin-add-category">Add New Category</Link>
-                        <div className="container"></div>
+                        <Link to="/admin-add-category">Admin Dashboard</Link>
                     </li>
                     <li>
                         <Link to="/post-item">Post Item</Link>
-                        <div className="container"></div>
+
                     </li>
-                    <li>
-                        <button
-                            className="logout-button"
-                            onClick={() => {
-                                localStorage.removeItem("isLoggedIn");
-                                navigate("/login");
-                            }}
-                        >
-                            Logout
-                        </button>
-                        <div className="container"></div>
+                    <li className="logout-button">
+                        <Link to="/login" >Logout</Link>
                     </li>
                 </ul>
             </div>
