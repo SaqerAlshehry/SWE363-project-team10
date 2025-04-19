@@ -49,10 +49,6 @@ function SideMenu({ isOpen, hideMenu }) {
                         <div className="container"></div>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
-                        <div className="container"></div>
-                    </li>
-                    <li>
                         <button
                             className="logout-button"
                             onClick={() => {

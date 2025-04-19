@@ -3,7 +3,7 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import './styles/App.css';
 import Header from './components/Header';
-import AdminAddCategory from './pages/AdminAddCategory';
+import AdminAddCategory from './pages/AdminDashboard';
 import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import ItemDetails from './pages/ItemDetails';
 import PostItem from './pages/PostItem';
