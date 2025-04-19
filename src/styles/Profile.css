@@ -14,7 +14,7 @@ body {
   align-items: center;
   background-color: #1c1e2a;
   padding: 0 24px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 
@@ -89,6 +89,8 @@ form.form-grid {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
   margin-top: 16px;
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 .comments-container {
@@ -101,8 +103,7 @@ form.form-grid {
   display: flex;
   flex-direction: column;
   align-items: start;
-  overflow-y: auto;
-  max-height: 400px;
+  
 }
 
 .comment {
