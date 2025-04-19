@@ -9,7 +9,6 @@ import ItemDetails from './pages/ItemDetails';
 import PostItem from './pages/PostItem';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Badge from './pages/badge';
 
 function Layout() {
   const location = useLocation();
@@ -27,7 +26,6 @@ function Layout() {
         <Route path="/admin-add-category" element={<AdminAddCategory />} />
         <Route path="/item-details" element={<ItemDetails />} />
         <Route path="/post-item" element={<PostItem />} />
-        <Route path="/badge" element={<Badge />} />
       </Routes>
     </div>
   );
