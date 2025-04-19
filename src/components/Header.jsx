@@ -22,16 +22,29 @@ function Header() {
     }
 
     return (
-        <div className="header-container">
-            <div onClick={showSideMenu} className="menu">
-                {isMenuOpen ? (
-                    <SideMenu isOpen={isMenuOpen} hideMenu={hideSideMenu} />
-                ) : (
-                    <FontAwesomeIcon className="menu-icon" icon={faBars} size="2x" />
-                )}
+<div className="header-container">
+            <div className="header-left">
+                <div onClick={showSideMenu} className="menu">
+                    {isMenuOpen ? (
+                        <SideMenu isOpen={isMenuOpen} hideMenu={hideSideMenu} />
+                    ) : (
+                        <FontAwesomeIcon className="menu-icon" icon={faBars} size="lg" />
+                    )}
+                </div>
+                <h1 
+                    className="sharegoods-logo" 
+                    onClick={() => navigate("/Home")}
+                >
+                    Sharegoods
+                </h1>
             </div>
-            <FontAwesomeIcon className="profile-icon" onClick={handleProfileNavigation} icon={faUser} size="2x" />
-
+            
+            <FontAwesomeIcon 
+                className="profile-icon" 
+                onClick={handleProfileNavigation} 
+                icon={faUser} 
+                size="lg" 
+            />
         </div>
     );
 }

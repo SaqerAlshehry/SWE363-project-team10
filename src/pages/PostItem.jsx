@@ -7,6 +7,7 @@ function PostItem() {
   const [imagePreview, setImagePreview] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [listingType, setListingType] = useState('trade');
   const navigate = useNavigate();
 
 
@@ -30,7 +31,7 @@ function PostItem() {
         </div>
   
         <form onSubmit={handleSubmit} className="post-form">
-          <TextField
+          <TextField 
             label="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -45,6 +46,32 @@ function PostItem() {
               rows={4}
               className="text-area"
             />
+          </div>
+
+          <div className="text-field">
+            <label className="text-label">A donation or a trade?</label>
+            <div className="radio-group">
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name="listingType"
+                  value="trade"
+                  checked={listingType === 'trade'}
+                  onChange={() => setListingType('trade')}
+                />
+                <span>Trade</span>
+              </label>
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name="listingType"
+                  value="donation"
+                  checked={listingType === 'donation'}
+                  onChange={() => setListingType('donation')}
+                />
+                <span>Donation</span>
+              </label>
+            </div>
           </div>
   
           <div className="text-field">
