@@ -1,0 +1,76 @@
+/* General styles for the Badge component */
+.badge-container {
+    padding: 20px;
+    background-color: #222533;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.badge-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.badge-header h1 {
+    font-size: 2rem;
+}
+
+.badge-header p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    font-size: 32px;
+}
+
+.badge-header .badge-rank {
+    font-size: 1.5rem;
+    color: #ffaf00;
+    font-weight: bold;
+}
+
+.badge-content {
+    background-color: #151720;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.badge-description {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.badge-history {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #222533;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.badge-history h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.badge-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.badge-item {
+    background-color: white;
+    font-size: 1.1rem;
+    color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}

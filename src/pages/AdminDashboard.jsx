@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import TextField from "../components/TextField";
 import "../styles/Home.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 
 
@@ -73,8 +70,8 @@ function AdminDashboard() {
                     onClick={() => {
                       if (label === "Add Listing") {
                         navigate("/post-item");
-                      }else if (label === "Remove Listing") {
-                        navigate("/remove-listing"); 
+                      } else if (label === "Remove Listing") {
+                        navigate("/remove-listing");
                       }
                     }}
                     style={{

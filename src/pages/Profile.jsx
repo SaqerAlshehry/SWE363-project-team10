@@ -52,7 +52,7 @@ function Profile() {
   return (
     <div className="profile-page">
       <div className="profile-card">
-        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={() => { handleBadgePageNavigation() }} />
+        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={handleBadgePageNavigation} />
 
         <form onSubmit={handleSubmit} className="form-grid">
           <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} icon={<FiUser />} />
