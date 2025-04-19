@@ -88,3 +88,30 @@
     list-style: none;
     font-size: 18px;
 }
+
+@media (max-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 10px;
+    }
+  
+    .profile-container {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .text-field {
+      max-width: 90%;
+    }
+  
+    .temp-item-card img {
+      max-width: 100%;
+    }
+  }
+  

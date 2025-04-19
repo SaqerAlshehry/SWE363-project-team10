@@ -191,7 +191,6 @@
 }
 /*Uplaod styling*/
 
-
 .type-select {
   width: 100%;
   padding: 12px;
@@ -214,4 +213,31 @@
 
 .text-field {
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .post-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 16px;
+  }
+
+  .image-preview img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .upload-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .post-page {
+    padding: 0 12px;
+  }
+
+  .type-select {
+    font-size: 14px;
+  }
 }
