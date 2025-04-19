@@ -8,12 +8,12 @@ import TempItemCard from "../components/ItemCard";
 function Home() {
     const [search, setSearch] = useState("");
     const items = [
-        { name: "Product 1", description: "Description for Product 1", donation: "Donation", image: "/assets/kfupm.jpg" },
-        { name: "Product 2", description: "Description for Product 2", donation: "Trade", image: "/assets/kfupm.jpg" },
-        { name: "Product 3", description: "Description for Product 3", donation: "Donation", image: "/assets/kfupm.jpg" },
-        { name: "Product 4", description: "Description for Product 4", donation: "Trade", image: "/assets/kfupm.jpg" },
-        { name: "Product 5", description: "Description for Product 5", donation: "Donation", image: "/assets/kfupm.jpg" },
-        { name: "Product 6", description: "Description for Product 6", donation: "Trade", image: "/assets/kfupm.jpg" }
+        { name: "Product 1", description: "Description for Product 1", type: "Electronic", donation: "Donation", image: "/assets/kfupm.jpg" },
+        { name: "Product 2", description: "Description for Product 2", type: "Furniture", donation: "Trade", image: "/assets/kfupm.jpg" },
+        { name: "Product 3", description: "Description for Product 3", type: "Clothing", donation: "Donation", image: "/assets/kfupm.jpg" },
+        { name: "Product 4", description: "Description for Product 4", type: "Books", donation: "Trade", image: "/assets/kfupm.jpg" },
+        { name: "Product 5", description: "Description for Product 5", type: "Other", donation: "Donation", image: "/assets/kfupm.jpg" },
+        { name: "Product 6", description: "Description for Product 6", type: "Books", donation: "Trade", image: "/assets/kfupm.jpg" }
     ];
 
     const filteredItems = items.filter(item => {

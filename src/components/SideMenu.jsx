@@ -31,7 +31,7 @@ function SideMenu({ isOpen, hideMenu }) {
             {isOpen && <div className="overlay" ref={overlayRef} onClick={hideMenu}></div>}
             <div className={`side-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
                 <ul>
-                    <h1 className="categories-header">Categories</h1>
+                    <h1 className="categories-header">Sections</h1>
                     <li>
                         <Link to="/home">Home</Link>
                         <div className="container"></div>

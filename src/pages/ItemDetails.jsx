@@ -12,12 +12,14 @@ function ItemDetails() {
     const itemDescription = itemObjectProperties[1];
     const itemDonation = itemObjectProperties[2];
     const itemImage = itemObjectProperties[3];
+    const itemType = itemObjectProperties[4]
     return (
         <div className="item-page">
             <div className="item-card">
                 <div className="details-column">
                     <p>{itemName}</p>
                     <p className="description">{itemDescription}</p>
+                    <p className="item-type">{itemType}</p>
                     <p className="price">{itemDonation}</p>
                 </div>
                 <img className="item-details-img" src={itemImage} alt={`Product ${itemName}`} />

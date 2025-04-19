@@ -10,6 +10,7 @@ function TempItemCard({ item }) {
         item.description,
         item.donation,
         item.image,
+        item.type,
     ];
 
     const handleClick = () => {

@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 24px;
-    background-color: #1c1e2a; 
+    background-color: #151720; 
     border-bottom: 1px solid #2d3042; 
     position: sticky;
     top: 0;
@@ -31,7 +31,7 @@
 
 /* Sharegoods logo */
 .sharegoods-logo {
-    color: #4c8df6; 
+    color: #3b86fe; 
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;

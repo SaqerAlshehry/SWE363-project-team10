@@ -8,6 +8,7 @@ function PostItem() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [listingType, setListingType] = useState('trade');
+  const [itemType, setItemType] = useState('other');
   const navigate = useNavigate();
 
 
@@ -72,6 +73,21 @@ function PostItem() {
                 <span>Donation</span>
               </label>
             </div>
+          </div>
+
+          <div className="text-field">
+            <label className="text-label">Item Type</label>
+            <select
+              value={itemType}
+              onChange={(e) => setItemType(e.target.value)}
+              className="type-select"
+            >
+              <option value="electronics">Electronics</option>
+              <option value="furniture">Furniture</option>
+              <option value="clothing">Clothing</option>
+              <option value="books">Books</option>
+              <option value="other">Other</option>
+            </select>
           </div>
   
           <div className="text-field">
