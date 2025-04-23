@@ -1,0 +1,243 @@
+.post-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1e2a;
+  padding: 0 24px;
+  color: white;
+  overflow: hidden;
+}
+
+.post-page h3 {
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
+
+.post-container {
+  display: flex;
+  background-color: #232533;
+  padding: 16px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  gap: 32px;
+  align-items: center;
+}
+
+.image-preview img {
+  width: 300px;
+  height: auto;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.post-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Matching TextField styles */
+.text-field input[type="text"],
+.text-field .text-area {
+  margin: -7px;
+  width: 97%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.text-field .text-area {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/*Interaction related styling*/
+.text-field input[type="text"]:hover,
+.text-field .text-area:hover {
+  background-color: #f9f9f9;
+}
+
+.text-field input[type="text"]:focus,
+.text-field .text-area:focus {
+  background-color: #f5f5f5;
+  border-color: #aaa;
+}
+
+.text-field input[type="text"]:active,
+.text-field .text-area:active {
+  background-color: #eee;
+}
+/* Matching TextField styles */
+
+/* Radio Button Group Styles */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4c8df6;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: #4c8df6;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+}
+
+.radio-option span {
+  color: white;
+  font-size: 14px;
+}
+/* Radio Button Group Styles */
+
+/*Submit styling*/
+.submit-button {
+  background-color: #4c8df6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #3a72d1;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+/*Submit styling*/
+
+
+/*Uplaod styling*/
+.upload-btn {
+  background-color: #4c8df6;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.upload-btn:hover {
+  background-color: #3a72d1;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+/*Uplaod styling*/
+
+.type-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #3a3d4f;
+  background-color: #393e5d;
+  color: white;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.type-select:hover{
+  background-color: #313650;
+}
+
+.type-select:focus {
+  border-color: #4c8df6;
+}
+
+.text-field {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .post-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 16px;
+  }
+
+  .image-preview img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .upload-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .post-page {
+    padding: 0 12px;
+  }
+
+  .type-select {
+    font-size: 14px;
+  }
+}

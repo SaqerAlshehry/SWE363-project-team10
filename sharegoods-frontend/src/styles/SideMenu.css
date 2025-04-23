@@ -1,0 +1,64 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.side-menu.open~.overlay {
+  opacity: 1;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #f1f3f6;
+  z-index: 999;
+  transition: left 0.3s;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.sections-header {
+  color: #1a237e;
+  font-size: 24px;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul li {
+  padding: 16px;
+  border-bottom: 2px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.side-menu ul li:hover {
+  background-color: #e3f2fd;
+  transform: translateX(5px);
+}
+
+.side-menu ul li a {
+  color: #0d47a1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  font-weight: 500;
+}

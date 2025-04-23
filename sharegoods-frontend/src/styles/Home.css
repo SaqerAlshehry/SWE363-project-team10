@@ -1,0 +1,117 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin-top: 24px;
+}
+
+.text-field {
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-wrapper {
+    background-color: white;
+    border: none;
+    box-shadow: none;
+}
+
+.text-field input {
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.grid-container {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.temp-item-card {
+    text-align: center;
+    border: 2px solid white;
+    padding: 24px;
+    border-radius: 5px;
+}
+
+.temp-item-card:hover {
+    transition: 0.2s ease;
+    background: #3a72d1;
+    cursor: pointer;
+}
+
+.temp-item-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.profile-icon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.temp-item-card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+.temp-item-card .price {
+    font-size: 24px;
+    color: #3a72d1;
+}
+
+.temp-item-card:hover .price {
+    font-size: 24px;
+    color: white;
+}
+
+.item-card ul li {
+    list-style: none;
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 10px;
+    }
+  
+    .profile-container {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .text-field {
+      max-width: 90%;
+    }
+  
+    .temp-item-card img {
+      max-width: 100%;
+    }
+  }
+  

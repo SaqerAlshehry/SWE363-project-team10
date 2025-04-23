@@ -1,0 +1,59 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background-color: #151720;
+    border-bottom: 1px solid #2d3042;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.menu-icon {
+    color: #e0e0e0;
+    transition: transform 0.2s;
+    font-size: 1.5rem;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #4c8df6;
+}
+
+
+.sharegoods-logo {
+    color: #3b86fe;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sharegoods-logo:hover {
+    color: #3a72d1;
+    transform: scale(1.02);
+}
+
+
+.profile-icon {
+    color: #e0e0e0;
+    transition: all 0.2s;
+    font-size: 1.5rem;
+}
+
+.profile-icon:hover {
+    color: #4c8df6;
+    transform: scale(1.1);
+    cursor: pointer;
+}

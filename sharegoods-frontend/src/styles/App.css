@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 20;
+  padding: 0;
+  height: 100%;
+  color: white;
+}
+
+#root {
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
