@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Build output (if any)
+dist/
+build/
+
+# PM2 process files (if used)
+pids/
+*.pid
+*.pid.lock
+
+# Uploads (optional - if you're storing uploaded files)
+uploads/
+
+# MongoDB dumps (optional - local database backups)
+dump/
