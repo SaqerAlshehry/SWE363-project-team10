@@ -6,11 +6,12 @@ function SignUp() {
     <div className="signup-container">
       <div className="signup-card">
         <div className="signup-header">
-          <span className="inactive-tab">Sign up</span>
           <span className="inactive-tab" onClick={() => window.location.href = '/login'}>
-  Login
-</span>
-
+            Login
+          </span>
+          <span className="inactive-tab">
+            Sign up
+          </span>
           <button className="close-btn">×</button>
         </div>
         <h2 className="welcome-title">Create Account</h2>
