@@ -17,6 +17,16 @@ function SignUp() {
         <h2 className="welcome-title">Create Account</h2>
 
         <div className="input-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your Name" />
+        </div>
+
+        <div className="input-group">
+          <label>Phone Number</label>
+          <input type="text" placeholder="+9665xxxxxxx" />
+        </div>
+
+        <div className="input-group">
           <label>Email</label>
           <input type="email" placeholder="sxxxxxxxxx@kfupm.edu.sa" />
         </div>
@@ -29,6 +39,16 @@ function SignUp() {
         <div className="input-group">
           <label>Confirm Password</label>
           <input type="password" placeholder="Confirm Password" />
+        </div>
+
+        <div className="input-group">
+          <label>Building</label>
+          <input type="text" placeholder="Building Number" />
+        </div>
+
+        <div className="input-group">
+          <label>Room</label>
+          <input type="text" placeholder="Room Number" />
         </div>
 
         <button className="signup-btn">Register</button>
