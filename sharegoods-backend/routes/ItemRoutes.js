@@ -1,16 +1,26 @@
-// import express from 'express';
-// import Item from '../models/Item.js';
+import express from 'express';
+import Item from '../models/Item.js';
 
-// const router = express.Router();
+const router = express.Router();
 
-// // GET all items
-// router.get('/', async (req, res) => {
-//   try {
-//     const items = await Item.find();
-//     res.json(items);
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// });
+// Add new item (listing)
+router.post('/', async (req, res) => {
+  // add item logic
+});
 
-// export default router;
+// Get all items (for homepage)
+router.get('/', async (req, res) => {
+  // get all items logic
+});
+
+// Get items by user (user's previous posts)
+router.get('/my-items/:userId', async (req, res) => {
+  // get user's items
+});
+
+// Delete item
+router.delete('/:itemId', async (req, res) => {
+  // delete item logic
+});
+
+export default router;
