@@ -1,14 +1,18 @@
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-// const dbURI = "mongodb://localhost:27017/myTestDB"; // dbname
+dotenv.config();
 
-// async function connectToMongoDB() {
-//   try {
-//     await mongoose.connect(dbURI);
-//     console.log("✅ Connected to MongoDB successfully!");
-//   } catch (err) {
-//     console.error("❌ MongoDB connection error:", err);
-//   }
-// }
+const dbURI = process.env.MONGO_URI;
 
-// connectToMongoDB();
+async function connectToMongoDB() {
+  try {
+    await mongoose.connect(dbURI);
+    console.log("✅ Connected to MongoDB Atlas successfully!");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
+}
+
+connectToMongoDB();
+
