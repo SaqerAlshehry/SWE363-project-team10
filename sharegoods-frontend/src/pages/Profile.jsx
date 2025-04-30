@@ -62,18 +62,6 @@ function Profile() {
             This badge is awarded for exceptional performance and contributions.
           </p>
         </div>
-        <h2>Badge History</h2>
-        <ul className="badge-list">
-          <li className="badge-item">
-            ⭐ 140 - Awarded on 2025/1/15
-          </li>
-          <li className="badge-item">
-            ⭐ 120 - Awarded on 2025/1/16
-          </li>
-          <li className="badge-item">
-            ⭐ 100 - Awarded on 2025/1/17
-          </li>
-        </ul>
       </div>
       <div className="profile-card">
         <Avatar name={name} image="/assets/kfupm.jpg" onEdit={handleBadgePageNavigation} />
@@ -94,9 +82,9 @@ function Profile() {
       <div className="history-card">
         <h3>Previous Posts</h3>
         <div className="history-grid">
-          <HistoryItems itemImage="/assets/kfupm.jpg" title="Desk Lamp" status="Completed" />
-          <HistoryItems itemImage="/assets/kfupm.jpg" title="Office Chair" status="Still" />
-          <HistoryItems itemImage="/assets/kfupm.jpg" title="Bookshelf" status="Still" />
+          <HistoryItems itemImage="/assets/kfupm.jpg" title="Desk Lamp" />
+          <HistoryItems itemImage="/assets/kfupm.jpg" title="Office Chair" />
+          <HistoryItems itemImage="/assets/kfupm.jpg" title="Bookshelf" />
         </div>
       </div>
       <div className="history-card">
