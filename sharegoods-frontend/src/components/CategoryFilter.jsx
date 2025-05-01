@@ -7,7 +7,7 @@ const CategoryFilter = ({ selectedCategory, onChange }) => {
     useEffect(() => {
         axios.get("/api/categories")
             .then(res => {
-                console.log("Fetched categories:", res.data); // 👀 debug log
+                console.log("Fetched categories:", res.data);
                 if (Array.isArray(res.data)) {
                     setCategories(res.data);
                 } else {
