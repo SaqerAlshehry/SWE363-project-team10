@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "../styles/Home.css";
+import "../styles/AdminDashboard.css";
 import { useNavigate } from "react-router-dom";
-
 
 function AdminDashboard() {
   const [category, setCategory] = useState("");
-  const [search, setSearch] = useState("");
+  const [categories, setCategories] = useState(["Electronics", "Books", "Clothing"]);
   const navigate = useNavigate();
 
   const totalMembers = 123;
@@ -14,6 +13,7 @@ function AdminDashboard() {
 
   const handleAddCategory = () => {
     if (category.trim()) {
+      setCategories([...categories, category.trim()]);
       alert(`Category "${category}" added!`);
       setCategory("");
     }
@@ -21,7 +21,7 @@ function AdminDashboard() {
 
   return (
     <div className="home-container">
-      <div className="grid-container" style={{ gap: "1.5rem", marginBottom: "2.5rem", gridTemplateColumns: "1fr" }}>
+      <div className="grid-container single-column">
         <div className="grid-item">
           <div className="item-card">
             <h3>Total Members</h3>
@@ -37,7 +37,7 @@ function AdminDashboard() {
         <div className="grid-item">
           <div className="item-card">
             <h3>Admins’ Emails</h3>
-            <ul style={{ paddingLeft: "1.2rem", margin: 0 }}>
+            <ul className="custom-list">
               {adminEmails.map((email, index) => (
                 <li key={index}>{email}</li>
               ))}
@@ -45,55 +45,23 @@ function AdminDashboard() {
           </div>
         </div>
       </div>
-      <div className="grid-container" style={{ marginBottom: "2.5rem", gridTemplateColumns: "1fr" }}>
-        <div className="grid-item">
-          <div className="item-card" style={{ padding: "30px" }}>
-            <h3 style={{ marginBottom: "1.5rem", textAlign: "center" }}>Listing Controls</h3>
-            <div style={{
-              display: "flex",
-              justifyContent: "space-around",
-              flexWrap: "wrap",
-              gap: "2rem",
-              alignItems: "center"
-            }}>
-              {["Add Listing", "Remove Listing", "Manage Listings"].map((label, i) => (
-                <div key={i} style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  minWidth: "160px",
-                  height: "100px"
-                }}>
-                  <h4 style={{ marginBottom: "0.5rem" }}>{label}</h4>
-                  <button
-                    onClick={() => {
-                      if (label === "Add Listing") {
-                        navigate("/post-item");
-                      } else if (label === "Remove Listing") {
-                        navigate("/remove-listing");
-                      }
-                    }}
-                    style={{
-                      padding: "10px 20px",
-                      backgroundColor: "green",
-                      color: "white",
-                      fontWeight: "bold",
-                      border: "none",
-                      borderRadius: "6px",
-                      cursor: "pointer"
-                    }}
-                  >
-                    Select
-                  </button>
-                </div>
-              ))}
 
+      <div className="grid-container single-column">
+        <div className="grid-item">
+          <div className="item-card padded">
+            <h3 className="center-text">Listing Controls</h3>
+            <div className="button-row centered">
+              <div className="horizontal-button">
+                <h4 style={{ margin: 0 }}>Manage Listings</h4>
+                <br></br>
+                <button onClick={() => navigate("/manage-listings")}>Select</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="grid-container" style={{ marginBottom: "4rem", gridTemplateColumns: "1fr" }}>
+
+      <div className="grid-container single-column">
         <div className="grid-item">
           <div className="item-card">
             <h3>Add Category</h3>
@@ -102,27 +70,17 @@ function AdminDashboard() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               placeholder="Category name"
-              style={{
-                padding: "10px",
-                width: "100%",
-                marginBottom: "10px",
-                borderRadius: "4px",
-                border: "1px solid #ccc"
-              }}
+              className="textfield-input"
             />
-            <button
-              onClick={handleAddCategory}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: "green",
-                color: "white",
-                border: "none",
-                borderRadius: "4px",
-                cursor: "pointer"
-              }}
-            >
-              Add
-            </button>
+            <button onClick={handleAddCategory}>Add</button>
+            <div className="category-list">
+              <h4>Current Categories</h4>
+              <ul className="custom-list">
+                {categories.map((cat, index) => (
+                  <li key={index}>{cat}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

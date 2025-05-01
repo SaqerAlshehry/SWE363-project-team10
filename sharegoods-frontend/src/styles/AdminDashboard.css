@@ -1,30 +1,84 @@
-ul {
-  list-style: none;
+/* Container Padding */
+.home-container {
+  padding: 2rem;
 }
 
+/* Grid Layouts */
+.grid-container {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* 3 Columns on Desktop */
+.three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 1 Column on Smaller Screens */
+@media (max-width: 900px) {
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+.single-column {
+  grid-template-columns: 1fr;
+}
+
+/* Each Grid Item */
+.grid-item {
+  width: 100%;
+}
+
+/* Card Design */
 .item-card {
-    background-color: #1e1e2f;
-    color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    padding: 24px;
-    min-height: 150px;
-  }
-  
-  
-  .primary-btn {
-    padding: 10px 18px;
-    background: linear-gradient(to right, green, gold);
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .textfield-input {
-    width: 100%;
-    max-width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+  background-color: #1e1e2f;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Unordered List Reset */
+.custom-list {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+/* Text Input */
+.textfield-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Category List Styling */
+.category-list {
+  margin-top: 1rem;
+}
+
+/* Centered Text */
+.center-text {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}

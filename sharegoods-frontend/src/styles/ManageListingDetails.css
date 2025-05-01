@@ -1,0 +1,138 @@
+.item-page {
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1e2a;
+  padding: 40px;
+}
+
+.item-card {
+  background-color: #232533;
+  padding: 40px 48px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.details-column {
+  flex: 1;
+  min-width: 0;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.item-details-img {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+p {
+  font-size: 32px;
+  margin: 0 0 16px 0;
+  word-break: break-word;
+}
+
+.description {
+  font-size: 20px;
+  color: #b0b0b0;
+  margin-bottom: 16px;
+  word-break: break-word;
+}
+
+.item-type {
+  font-size: 18px;
+  color: #b0b0b0;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  background-color: rgba(76, 141, 246, 0.1);
+  border-radius: 6px;
+  display: inline-block;
+  word-break: break-word;
+}
+
+.details-column .price {
+  color: #4c8df6;
+}
+
+/* Admin Buttons */
+.admin-controls {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.admin-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.admin-button.edit {
+  background-color: #ffaa00;
+  color: #000;
+}
+
+.admin-button.edit:hover {
+  background-color: #e09d00;
+}
+
+.admin-button.remove {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+.admin-button.remove:hover {
+  background-color: #d13a3a;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .item-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-details-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .details-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .admin-controls {
+    justify-content: center;
+  }
+}
