@@ -4,20 +4,16 @@ import { useNavigate } from "react-router-dom";
 function TempItemCard({ item }) {
     const navigate = useNavigate();
 
-    // Create an array of item properties
     const itemObjectProperties = [
-        item.name,
+        item.title,
         item.description,
-        item.donation,
-        item.image,
         item.type,
+        item.image,
+        item.itemType
     ];
 
     const handleClick = () => {
-        // Serialize the array and encode it
         const serializedData = encodeURIComponent(JSON.stringify(itemObjectProperties));
-
-        // Navigate to ItemDetails, passing the serialized data as a query param
         navigate(`/item-details?data=${serializedData}`);
     };
 
@@ -25,12 +21,13 @@ function TempItemCard({ item }) {
         <div onClick={handleClick} className="temp-item-card">
             <img
                 src={item.image}
-                alt={item.name}
+                alt={item.title}
             />
-            <h3>{item.name}</h3>
-            <h3 className="price">{item.donation}</h3>
+            <h3>{item.title}</h3>
+            <h3 className="price">{item.type}</h3> 
         </div>
     );
 }
 
 export default TempItemCard;
+
