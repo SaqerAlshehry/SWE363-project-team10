@@ -2,6 +2,9 @@ import express from 'express';
 import User from '../models/User.js';
 import Item from '../models/Item.js';
 import Category from '../models/Category.js';
+import express from 'express';
+import Category from '../models/Category.js';
+import Admin from "../models/Admin.js";
 
 const router = express.Router();
 
@@ -25,6 +28,16 @@ router.get('/total-listings', async (req, res) => {
   }
 });
 
+// Get all admin emails
+router.get('/', async (req, res) => {
+  try {
+    const admins = await Admin.find();
+    res.status(200).json(admins);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching categories', error: error.message });
+  }
+});
+
 // Get all categories
 router.get('/categories', async (req, res) => {
   try {
@@ -35,8 +48,18 @@ router.get('/categories', async (req, res) => {
   }
 });
 
-// Add new category
-router.post('/categories', async (req, res) => {
+// Get all categories
+router.get('/categories', async (req, res) => {
+  try {
+    const categories = await Category.find();
+    res.json(categories);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching categories', error: error.message });
+  }
+});
+
+// Add a new category (admin only)
+router.post('/', async (req, res) => {
   try {
     const { name } = req.body;
 
@@ -48,11 +71,25 @@ router.post('/categories', async (req, res) => {
 
     const newCategory = new Category({ name });
     await newCategory.save();
-    res.json({ message: 'Category added', category: newCategory });
-    
+
+    res.status(201).json({ message: 'Category added successfully', category: newCategory });
   } catch (error) {
     res.status(500).json({ message: 'Error adding category', error: error.message });
   }
 });
+
+// Delete a category (admin only)
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await Category.findByIdAndDelete(id);
+
+    res.status(200).json({ message: 'Category deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error deleting category', error: error.message });
+  }
+});
+
 
 export default router;
