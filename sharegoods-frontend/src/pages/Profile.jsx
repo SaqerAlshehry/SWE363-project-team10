@@ -92,13 +92,14 @@ function Profile() {
         <div className="history-grid">
           <div className='comments-container'>
             {comments.map((comment, index) => (
-              <div>
+              <div key={index} className="comment-wrapper">
                 <strong>{comment.name}</strong>
-                <div key={index} className="comment">
+                <div className="comment">
                   <p>{comment.comment}</p>
                 </div>
               </div>
             ))}
+
           </div>
         </div>
       </div>

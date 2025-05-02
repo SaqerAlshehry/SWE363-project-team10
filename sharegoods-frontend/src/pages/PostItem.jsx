@@ -12,12 +12,36 @@ function PostItem() {
   const navigate = useNavigate();
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Item posted!');
-    navigate('/profile')
-    
-  };
+  
+    const formData = {
+      title,
+      description,
+      type: listingType.charAt(0).toUpperCase() + listingType.slice(1), 
+      itemType,
+      image: imagePreview, 
+      //userId:
+    };
+  
+    try {
+      const response = await fetch("http://localhost:3000/api/items", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      const result = await response.json();
+      console.log(result);
+      alert("Item posted!");
+      navigate('/profile');
+    } catch (err) {
+      console.error("Error posting item:", err);
+      alert("Failed to post item.");
+    }
+  };  
 
   return (
     <div className="post-page">

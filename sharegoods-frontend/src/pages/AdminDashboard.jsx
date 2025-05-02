@@ -54,7 +54,7 @@ function AdminDashboard() {
               <div className="horizontal-button">
                 <h4 style={{ margin: 0 }}>Manage Listings</h4>
                 <br></br>
-                <button onClick={() => navigate("/manage-listings")}>Select</button>
+                <button onClick={() => navigate("/manage-listing-details")}>Select</button>
               </div>
             </div>
           </div>

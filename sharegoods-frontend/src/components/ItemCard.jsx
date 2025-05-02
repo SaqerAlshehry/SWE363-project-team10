@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function TempItemCard({ item }) {
+function TempItemCard({ item, editable }) {
     const navigate = useNavigate();
 
     const itemObjectProperties = [
@@ -9,12 +9,15 @@ function TempItemCard({ item }) {
         item.description,
         item.type,
         item.image,
-        item.itemType
+        item.itemType,
+        item._id
     ];
 
     const handleClick = () => {
         const serializedData = encodeURIComponent(JSON.stringify(itemObjectProperties));
-        navigate(`/item-details?data=${serializedData}`);
+        navigate(`/item-details?data=${serializedData}`, {
+            state: { fromManage: editable || false }
+          });          
     };
 
     return (

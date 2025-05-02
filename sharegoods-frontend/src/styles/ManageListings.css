@@ -1,0 +1,50 @@
+.manage-container {
+    padding: 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: #222;
+    box-sizing: border-box;
+  }
+  
+  
+  .manage-header {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #e4d9d9;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+  }
+  
+  .manage-search {
+    width: 100%;
+    max-width: 600px;      
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 0 auto 1.5rem auto;  
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  
+  .no-results {
+    font-style: italic;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .manage-header {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .manage-search {
+      font-size: 0.95rem;
+    }
+  }
+  
+
+  
+  

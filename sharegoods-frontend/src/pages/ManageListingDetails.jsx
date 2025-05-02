@@ -1,46 +1,56 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import "../styles/ManageListingDetails.css";
+import React, { useState, useEffect } from "react";
+import "../styles/ManageListings.css"; // Use a new style sheet if you want to separate styles
+import TempItemCard from "../components/ItemCard";
+import axios from "axios";
 
-function ManageListingDetails() {
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const data = params.get("data");
-  const decodedData = decodeURIComponent(data);
-  const itemObjectProperties = JSON.parse(decodedData);
+function ManageListings() {
+  const [items, setItems] = useState([]);
+  const [search, setSearch] = useState("");
 
-  const itemName = itemObjectProperties[0];
-  const itemDescription = itemObjectProperties[1];
-  const itemDonation = itemObjectProperties[2];
-  const itemImage = itemObjectProperties[3];
-  const itemType = itemObjectProperties[4];
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const res = await axios.get("/api/items");
+        setItems(res.data);
+      } catch (err) {
+        console.error("Error fetching items", err);
+      }
+    };
 
-  const handleRemove = () => {
-    alert(`Listing "${itemName}" removed (fake action).`);
-  };
+    fetchItems();
+  }, []);
 
-  const handleEdit = () => {
-    alert(`Edit "${itemName}" (fake action).`);
-  };
+  const filteredItems = items.filter(
+    item =>
+      item.title.toLowerCase().includes(search.toLowerCase()) ||
+      item.description.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div className="item-page">
-      <div className="item-card">
-        <div className="details-column">
-          <p>{itemName}</p>
-          <p className="description">{itemDescription}</p>
-          <p className="item-type">{itemType}</p>
-          <p className="price">{itemDonation}</p>
+    <div className="manage-container">
+      <h1 className="manage-header">Manage Your Listings</h1>
 
-          <div className="admin-controls">
-            <button className="admin-button edit" onClick={handleEdit}>Edit</button>
-            <button className="admin-button remove" onClick={handleRemove}>Remove</button>
-          </div>
-        </div>
-        <img className="item-details-img" src={itemImage} alt={`Product ${itemName}`} />
+      <input
+        className="manage-search"
+        type="text"
+        placeholder="Search your items..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <div className="grid-container">
+        {filteredItems.length === 0 ? (
+          <p className="no-results">No items match your search.</p>
+        ) : (
+          filteredItems.map((item) => (
+            <div className="grid-item" key={item._id}>
+              <TempItemCard item={item} editable={true} /> 
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
 }
 
-export default ManageListingDetails;
+export default ManageListings;
