@@ -46,16 +46,6 @@ router.get('/categories', async (req, res) => {
   }
 });
 
-// Get all categories
-router.get('/categories', async (req, res) => {
-  try {
-    const categories = await Category.find();
-    res.json(categories);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching categories', error: error.message });
-  }
-});
-
 // Add a new category (admin only)
 router.post('/add', async (req, res) => {
   try {
