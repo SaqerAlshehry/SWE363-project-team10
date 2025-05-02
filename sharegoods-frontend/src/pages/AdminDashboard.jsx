@@ -1,23 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/AdminDashboard.css";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+
 
 function AdminDashboard() {
   const [category, setCategory] = useState("");
-  const [categories, setCategories] = useState(["Electronics", "Books", "Clothing"]);
+  const [categories, setCategories] = useState([]);
+
   const navigate = useNavigate();
 
   const totalMembers = 123;
   const totalListings = 456;
   const adminEmails = ["admin1@example.com", "admin2@example.com", "admin3@example.com"];
 
-  const handleAddCategory = () => {
+  const handleAddCategory = async () => {
     if (category.trim()) {
-      setCategories([...categories, category.trim()]);
-      alert(`Category "${category}" added!`);
-      setCategory("");
+      try {
+        const response = await axios.post("http://localhost:3000/api/admin/add", {
+          name: category.trim()
+        });
+  
+        alert(`Category "${response.data.category.name}" added!`);
+        setCategory("");
+        await fetchCategories();
+      } catch (error) {
+        console.error("❌ Add Category Error:", error);
+        alert(error.response?.data?.message || "Failed to add category");
+      }
     }
   };
+  
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/api/admin/categories");
+      setCategories(response.data.map((cat) => cat.name));
+    } catch (error) {
+      console.error("❌ Failed to fetch categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+  
+  
+  
 
   return (
     <div className="home-container">

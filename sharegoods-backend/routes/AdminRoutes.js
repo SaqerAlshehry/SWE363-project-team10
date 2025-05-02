@@ -1,8 +1,6 @@
 import express from 'express';
 import User from '../models/User.js';
-import Item from '../models/Item.js';
-import Category from '../models/Category.js';
-import express from 'express';
+import Item from '../models/Listings.js';
 import Category from '../models/Category.js';
 import Admin from "../models/Admin.js";
 
@@ -59,7 +57,7 @@ router.get('/categories', async (req, res) => {
 });
 
 // Add a new category (admin only)
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
   try {
     const { name } = req.body;
 
