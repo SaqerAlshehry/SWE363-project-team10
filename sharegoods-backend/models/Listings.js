@@ -3,7 +3,7 @@ const itemSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', // Link to users listings
-    required: true
+    required: false //We'll change this to later once being logged in is a REQUIREMENT to post items.
   },
   title: {
     type: String,
@@ -29,5 +29,5 @@ const itemSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Item = mongoose.model('Item', itemSchema);
+const Item = mongoose.model('items', itemSchema);
 export default Item;
