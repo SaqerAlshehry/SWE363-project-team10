@@ -1,80 +1,105 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
 import { FiUser, FiMail, FiPhone, FiLock, FiHome } from 'react-icons/fi';
-import '../styles/Profile.css'
+import '../styles/Profile.css';
 import HistoryItems from '../components/HistoryItems';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 
 function Profile() {
-  const [name, setName] = useState('Ahmed s');
-  const [email, setEmail] = useState('s200000000@kfupm.edu.sa');
-  const [phone, setPhone] = useState('+966');
+  const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    building: '',
+    room: '',
+  });
+
   const [password, setPassword] = useState('');
-  const [building, setBuilding] = useState('862');
-  const [room, setRoom] = useState('111');
-
-  const comments = [
-    {
-      name: 'Saud Maashi',
-      comment: 'Great user, very helpful!',
-    },
-    {
-      name: 'Saud Alshushan',
-      comment: 'Very responsive and kind.',
-    },
-    {
-      name: 'Saqer Alshehri',
-      comment: 'Had a great experience!',
-    },
-    {
-      name: 'Osama Alghamdi',
-      comment: 'Could improve on communication.',
-    },
-    {
-      name: 'Hussain Alabdalali',
-      comment: 'Highly recommended!',
-    },
-  ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Profile saved!');
-  };
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  function handleBadgePageNavigation() {
-    navigate("/badge");
-  }
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const res = await axios.get('http://localhost:5000/api/users/me', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUserData({
+          name: res.data.name || '',
+          email: res.data.email || '',
+          phoneNumber: res.data.phoneNumber || '',
+          building: res.data.building || '',
+          room: res.data.room || '',
+        });
+      } catch (err) {
+        console.error('Error fetching profile:', err);
+        setError('Failed to load profile');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!password || password.length < 8) {
+      alert('Password must be at least 8 characters');
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('token');
+      const res = await axios.put(
+        'http://localhost:5000/api/users/update-password',
+        { password },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      alert(res.data.message || 'Password updated');
+      setPassword('');
+    } catch (err) {
+      console.error('Error updating password:', err);
+      alert('Failed to update password');
+    }
+  };
+
+  const handleBadgePageNavigation = () => {
+    navigate('/badge');
+  };
+
+  if (loading) return <div className="profile-page">Loading...</div>;
+  if (error) return <div className="profile-page">{error}</div>;
 
   return (
     <div className="profile-page">
-      <div className="badge-container">
-        <div className="badge-header">
-          <h1>My Badges</h1>
-          <p>⭐ 360</p>
-          <p className="badge-rank">Your Rank is Bronze</p>
-        </div>
-        <div className="badge-content">
-          <p className="badge-description">
-            This badge is awarded for exceptional performance and contributions.
-          </p>
-        </div>
-      </div>
       <div className="profile-card">
-        <Avatar name={name} image="/assets/kfupm.jpg" onEdit={handleBadgePageNavigation} />
+        <Avatar name={userData.name} image="/assets/kfupm.jpg" onEdit={handleBadgePageNavigation} />
         <form onSubmit={handleSubmit} className="form-grid">
-          <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} icon={<FiUser />} />
-          <TextField label="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} icon={<FiPhone />} />
-          <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} icon={<FiMail />} />
-          <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} icon={<FiLock />} />
-          <TextField label="Building" value={building} onChange={(e) => setBuilding(e.target.value)} icon={<FiHome />} />
-          <TextField label="Room" value={room} onChange={(e) => setRoom(e.target.value)} icon={<FiHome />} />
+          <TextField label="Name" value={userData.name} icon={<FiUser />} readOnly />
+          <TextField label="Phone Number" value={userData.phoneNumber} icon={<FiPhone />} readOnly />
+          <TextField label="Email" value={userData.email} icon={<FiMail />} readOnly />
+          <TextField label="Building" value={userData.building} icon={<FiHome />} readOnly />
+          <TextField label="Room" value={userData.room} icon={<FiHome />} readOnly />
+          <TextField
+            label="New Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            icon={<FiLock />}
+          />
           <div className="button-row">
             <button type="submit" className="save-button">Save</button>
-            <button type="button" className="change-password-button" onClick={() => alert('Change Password')}>Change Password</button>
           </div>
         </form>
       </div>
@@ -87,26 +112,8 @@ function Profile() {
           <HistoryItems itemImage="/assets/kfupm.jpg" title="Bookshelf" />
         </div>
       </div>
-      <div className="history-card">
-        <h3>What People Say About This User</h3>
-        <div className="history-grid">
-          <div className='comments-container'>
-            {comments.map((comment, index) => (
-              <div key={index} className="comment-wrapper">
-                <strong>{comment.name}</strong>
-                <div className="comment">
-                  <p>{comment.comment}</p>
-                </div>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </div>
-
     </div>
   );
-
 }
 
 export default Profile;
