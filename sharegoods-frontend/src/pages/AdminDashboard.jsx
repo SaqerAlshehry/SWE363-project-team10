@@ -7,12 +7,20 @@ import axios from 'axios';
 function AdminDashboard() {
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);
+  const [totalMembers, setTotalMembers] = useState("0");
+  const [totalListings, setTotalListings] = useState("0");
 
   const navigate = useNavigate();
 
-  const totalMembers = 123;
-  const totalListings = 456;
-  const adminEmails = ["admin1@example.com", "admin2@example.com", "admin3@example.com"];
+  const fetchTotalMembers = async () => {
+    const response = await axios.get("/api/admin/total-members");
+    setTotalMembers(response.data.totalMembers);
+  };
+
+  const fetchTotalListings = async () => {
+    const response = await axios.get("/api/admin/total-listings");
+    setTotalListings(response.data.totalListings);
+  };
 
   const handleAddCategory = async () => {
     if (category.trim()) {
@@ -20,7 +28,7 @@ function AdminDashboard() {
         const response = await axios.post("http://localhost:3000/api/admin/add", {
           name: category.trim()
         });
-  
+
         alert(`Category "${response.data.category.name}" added!`);
         setCategory("");
         await fetchCategories();
@@ -30,7 +38,7 @@ function AdminDashboard() {
       }
     }
   };
-  
+
 
   const fetchCategories = async () => {
     try {
@@ -42,11 +50,13 @@ function AdminDashboard() {
   };
 
   useEffect(() => {
+    fetchTotalMembers();
+    fetchTotalListings();
     fetchCategories();
   }, []);
-  
-  
-  
+
+
+
 
   return (
     <div className="home-container">
@@ -63,18 +73,7 @@ function AdminDashboard() {
             <p>{totalListings}</p>
           </div>
         </div>
-        <div className="grid-item">
-          <div className="item-card">
-            <h3>Admins’ Emails</h3>
-            <ul className="custom-list">
-              {adminEmails.map((email, index) => (
-                <li key={index}>{email}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
-
       <div className="grid-container single-column">
         <div className="grid-item">
           <div className="item-card padded">
@@ -82,7 +81,7 @@ function AdminDashboard() {
             <div className="button-row centered">
               <div className="horizontal-button">
                 <h4 style={{ margin: 0 }}>Manage Listings</h4>
-                <br></br>
+                <br />
                 <button onClick={() => navigate("/manage-listing-details")}>Select</button>
               </div>
             </div>

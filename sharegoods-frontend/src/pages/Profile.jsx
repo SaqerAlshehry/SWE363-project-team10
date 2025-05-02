@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '../components/TextField';
 import Avatar from '../components/Avatar';
 import { FiUser, FiMail, FiPhone, FiLock, FiHome } from 'react-icons/fi';
-import '../styles/Profile.css'
+import '../styles/Profile.css';
 import HistoryItems from '../components/HistoryItems';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 
 function Profile() {
   const [name, setName] = useState('Ahmed s');
@@ -14,29 +14,6 @@ function Profile() {
   const [password, setPassword] = useState('');
   const [building, setBuilding] = useState('862');
   const [room, setRoom] = useState('111');
-
-  const comments = [
-    {
-      name: 'Saud Maashi',
-      comment: 'Great user, very helpful!',
-    },
-    {
-      name: 'Saud Alshushan',
-      comment: 'Very responsive and kind.',
-    },
-    {
-      name: 'Saqer Alshehri',
-      comment: 'Had a great experience!',
-    },
-    {
-      name: 'Osama Alghamdi',
-      comment: 'Could improve on communication.',
-    },
-    {
-      name: 'Hussain Alabdalali',
-      comment: 'Highly recommended!',
-    },
-  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,18 +28,6 @@ function Profile() {
 
   return (
     <div className="profile-page">
-      <div className="badge-container">
-        <div className="badge-header">
-          <h1>My Badges</h1>
-          <p>⭐ 360</p>
-          <p className="badge-rank">Your Rank is Bronze</p>
-        </div>
-        <div className="badge-content">
-          <p className="badge-description">
-            This badge is awarded for exceptional performance and contributions.
-          </p>
-        </div>
-      </div>
       <div className="profile-card">
         <Avatar name={name} image="/assets/kfupm.jpg" onEdit={handleBadgePageNavigation} />
         <form onSubmit={handleSubmit} className="form-grid">
@@ -87,26 +52,8 @@ function Profile() {
           <HistoryItems itemImage="/assets/kfupm.jpg" title="Bookshelf" />
         </div>
       </div>
-      <div className="history-card">
-        <h3>What People Say About This User</h3>
-        <div className="history-grid">
-          <div className='comments-container'>
-            {comments.map((comment, index) => (
-              <div key={index} className="comment-wrapper">
-                <strong>{comment.name}</strong>
-                <div className="comment">
-                  <p>{comment.comment}</p>
-                </div>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </div>
-
     </div>
   );
-
 }
 
 export default Profile;
