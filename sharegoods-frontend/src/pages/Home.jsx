@@ -34,9 +34,9 @@ function Home() {
 
   const filteredItems = Array.isArray(items)
     ? items.filter(item =>
-      item.title.toLowerCase().includes(search.toLowerCase()) ||
-      item.description.toLowerCase().includes(search.toLowerCase())
-    )
+        item.title.toLowerCase().includes(search.toLowerCase()) ||
+        item.description.toLowerCase().includes(search.toLowerCase())
+      )
     : [];
 
   const itemsToDisplay = search ? filteredItems : items;
@@ -58,6 +58,7 @@ function Home() {
 
       <div className="grid-container">
         {error && <p className="error-message">{error}</p>}
+
         {Array.isArray(itemsToDisplay) && itemsToDisplay.length === 0 ? (
           <p>No results found</p>
         ) : Array.isArray(itemsToDisplay) ? (
