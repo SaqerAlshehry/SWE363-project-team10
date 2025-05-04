@@ -25,7 +25,7 @@ function Profile() {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/users/me', {
+        const res = await axios.get('https://sharegoodss.onrender.com/api/users/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -58,7 +58,7 @@ function Profile() {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.put(
-        'http://localhost:5000/api/users/update-password',
+        'https://sharegoodss.onrender.com/api/users/update-password',
         { password },
         {
           headers: {

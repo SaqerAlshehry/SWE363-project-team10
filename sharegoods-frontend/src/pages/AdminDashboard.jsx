@@ -13,19 +13,19 @@ function AdminDashboard() {
   const navigate = useNavigate();
 
   const fetchTotalMembers = async () => {
-    const response = await axios.get("/api/admin/total-members");
+    const response = await axios.get("https://sharegoodss.onrender.com/api/admin/total-members");
     setTotalMembers(response.data.totalMembers);
   };
 
   const fetchTotalListings = async () => {
-    const response = await axios.get("/api/admin/total-listings");
+    const response = await axios.get("https://sharegoodss.onrender.com/api/admin/total-listings");
     setTotalListings(response.data.totalListings);
   };
 
   const handleAddCategory = async () => {
     if (category.trim()) {
       try {
-        const response = await axios.post("http://localhost:5000/api/admin/add", {
+        const response = await axios.post("https://sharegoodss.onrender.com/api/admin/add", {
           name: category.trim()
         });
 
@@ -42,7 +42,7 @@ function AdminDashboard() {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/admin/categories");
+      const response = await axios.get("https://sharegoodss.onrender.com/api/admin/categories");
       setCategories(response.data.map((cat) => cat.name));
     } catch (error) {
       console.error("❌ Failed to fetch categories:", error);

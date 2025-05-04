@@ -5,7 +5,7 @@ const CategoryFilter = ({ selectedCategory, onChange }) => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/categories")
+        axios.get("https://sharegoodss.onrender.com/api/categories")
             .then(res => {
                 console.log("Fetched categories:", res.data);
                 if (Array.isArray(res.data)) {

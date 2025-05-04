@@ -10,7 +10,7 @@ function ManageListings() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get("/api/items");
+        const res = await axios.get("https://sharegoodss.onrender.com/api/items");
         setItems(res.data);
       } catch (err) {
         console.error("Error fetching items", err);

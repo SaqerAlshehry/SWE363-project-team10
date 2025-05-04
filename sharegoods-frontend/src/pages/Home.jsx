@@ -18,7 +18,7 @@ function Home() {
       try {
         setError("");
         console.log("🔄 Fetching items from /api/items...");
-        const res = await axios.get("/api/items", {
+        const res = await axios.get("https://sharegoodss.onrender.com/api/items", {
           params: selectedCategory ? { category: selectedCategory } : {}
         });
         console.log("✅ Items received:", res.data);
