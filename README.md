@@ -46,6 +46,7 @@ The backend uses environment variables to connect to MongoDB.
 ```env
 MONGO_URI=your-mongodb-connection-string
 ```
+## ✏️ Commands to run
 ```bash
 
 # Clone the repository
