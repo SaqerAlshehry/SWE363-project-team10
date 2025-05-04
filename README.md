@@ -45,7 +45,8 @@ The backend uses environment variables to connect to MongoDB.
 
 ```env
 MONGO_URI=your-mongodb-connection-string
-
+```
+```bash
 
 # Clone the repository
 git clone https://github.com/SaqerAlshehry/SWE363-project-team10.git
