@@ -16,13 +16,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: '*',                   
-  methods: '*',                  
-  allowedHeaders: '*',           
-  credentials: true,
-  preflightContinue: false,
-  optionsSuccessStatus: 204
-}));
+  origin: 'https://sharegoodss-fhtd.vercel.app/',
+  credentials: true
+ }));
 app.use(express.json());
 
 // Routes
