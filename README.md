@@ -22,8 +22,8 @@
 - **Vite** – lightning-fast build tool for React projects  
 - **React Router DOM** – handles page navigation and routing  
 - **React Icons** – for using popular icon sets  
-- **CSS** – for custom styling and layout adjustments
-- **Postman** - for testing endpoints
+- **CSS** – for custom styling and layout adjustments  
+- **Postman** – for testing endpoints
 
 ---
 
@@ -46,9 +46,7 @@ The backend uses environment variables to connect to MongoDB.
 ```env
 MONGO_URI=your-mongodb-connection-string
 
-### ▶️ Clone and Run the Project
 
-```bash
 # Clone the repository
 git clone https://github.com/SaqerAlshehry/SWE363-project-team10.git
 
@@ -69,6 +67,10 @@ npm install
 
 # Run the backend server
 node server.js
+
+
+
+
 
 
 
