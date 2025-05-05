@@ -29,7 +29,7 @@ function ItemDetails() {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`/https://sharegoodss.onrender.comapi/items/${itemId}`, {
+            const response = await fetch(`https://sharegoodss.onrender.com/api/items/${itemId}`, {
                 method: "DELETE",
             });
 
